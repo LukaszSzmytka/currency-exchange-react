@@ -2,6 +2,9 @@
 
 ## This is simple currency exchange with react.js
 
+You can see my job here:
+- https://lukaszszmytka.github.io/currency-exchange-react/
+
 Interactions will be added soon.
 
 ---
