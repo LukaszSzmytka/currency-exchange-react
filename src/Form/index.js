@@ -1,19 +1,18 @@
 import "./style.css";
 import { useState } from "react";
+import { currencies } from "../currencies";
 
 const Form = () => {
   const [amount, setAmount] = useState("");
   const [currency, setCurrency] = useState("");
+  
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-
-    console.log(`amuont = ${amount}`);
-    console.log(`currency = ${currency}`);
   };
 
   return (
-    <form className="form" onSubmit={onFormSubmit} >
+    <form className="form" onSubmit={onFormSubmit}>
       <h1 className="form__header">Kantor wymiany walut</h1>
       <p>
         <label>
@@ -34,17 +33,18 @@ const Form = () => {
         <label>
           <span className="form__labelText">Wybierz walutę :</span>
           <select
-           className="form__field"
-           name="currency"
-           value={currency}
-           onChange={({target}) => setCurrency(target.value)}
+            className="form__field"
+            name="currency"
+            value={currency}
+            onChange={({ target }) => setCurrency(target.value)}
           >
-            <option value="EUR">Euro</option>
-            <option value="USD">Dolar amerykański</option>
-            <option value="CHF">Frank szwajcarski</option>
-            <option value="HRK">Kuna chorwacka</option>
-            <option value="TRY">Lira turecka</option>
-            <option value="GBP">Funt brytyjski</option>
+          {currencies.map((currency) => (
+            <option
+              key={currency.id}
+            >
+              {currency.name}
+            </option>
+          ))}
           </select>
         </label>
       </p>
