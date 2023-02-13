@@ -9,7 +9,7 @@ const Form = () => {
   const [result, setResult] = useState();
   const [printResult, setPrintResult] = useState();
   const rate = currencies.find(({ name }) => name === currency).rate;
-  const short = currencies.find(({name}) => name === currency).short;
+  const short = currencies.find(({ name }) => name === currency).short;
   const calculateResult = () => {
     setResult(() => amount / rate);
   };
@@ -21,7 +21,6 @@ const Form = () => {
     event.preventDefault();
     calculateResult();
     showResult();
-    
   };
 
   return (
@@ -61,10 +60,7 @@ const Form = () => {
       <p>
         <button className="form__button">Przelicz</button>
       </p>
-      <Result
-        printResult={printResult}
-        result={result} 
-      />
+      <Result printResult={printResult} result={result} />
     </form>
   );
 };
