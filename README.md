@@ -5,10 +5,24 @@
 You can see my job here:
 - https://lukaszszmytka.github.io/currency-exchange-react/
 
-Interactions will be added soon.
-
 ---
-[![kalkulator.gif](https://i.postimg.cc/ncRDqTT5/kalkulator.gif)](https://postimg.cc/ykRxHmMX)
+[![kalkulator2.gif](https://i.postimg.cc/dQ561nxS/kalkulator2.gif)](https://postimg.cc/6TGnbVwd)
+
+## Technologies and features:
+- HTML
+- CSS, Normalize CSS, BEM
+- FLEX
+- GRID
+- Media queries
+- Transforms, transitions
+- Javascript (EC6+)
+- React
+
+## Checkout my other projects:
+- https://lukaszszmytka.github.io/homepage/
+- https://lukaszszmytka.github.io/currencyExchange/
+- https://lukaszszmytka.github.io/to-do-list/
+- https://lukaszszmytka.github.io/to-do-list-react/
 
 ## Getting Started with Create React App
 
