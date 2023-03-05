@@ -4,17 +4,21 @@ import { currencies } from "../currencies";
 import Result from "../Result";
 
 const Form = () => {
+
   const [amount, setAmount] = useState("");
   const [currency, setCurrency] = useState(currencies[0].name);
   const [result, setResult] = useState();
   const [printResult, setPrintResult] = useState();
+
   const rate = currencies.find(({ name }) => name === currency).rate;
   const short = currencies.find(({ name }) => name === currency).short;
+
   const calculateResult = () => {
-    setResult(() => amount / rate);
+    setResult(amount / rate);
   };
+
   const showResult = () => {
-    setPrintResult(() => ({ amount, short, rate }));
+    setPrintResult({ amount, short, rate });
   };
 
   const onFormSubmit = (event) => {
