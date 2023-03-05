@@ -6,7 +6,7 @@ You can see my job here:
 - https://lukaszszmytka.github.io/currency-exchange-react/
 
 ---
-[![kalkulator2.gif](https://i.postimg.cc/dQ561nxS/kalkulator2.gif)](https://postimg.cc/6TGnbVwd)
+[![calc3.gif](https://i.postimg.cc/kMT2gch4/calc3.gif)](https://postimg.cc/9zqmxG25)
 
 ## Technologies and features:
 - HTML
@@ -17,6 +17,7 @@ You can see my job here:
 - Transforms, transitions
 - Javascript (EC6+)
 - React
+- useState, useEffect
 
 ## Checkout my other projects:
 - https://lukaszszmytka.github.io/homepage/
