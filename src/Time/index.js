@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./style.css";
+import { StyledDate } from "./styled";
 
 const Time = () => {
 
@@ -16,12 +16,12 @@ const Time = () => {
     }, []);
 
     return (
-      <p className="header">Dzisiaj jest 
+      <StyledDate>Dzisiaj jest 
        {`
          ${date.toLocaleString(undefined, {weekday: "long", day: "numeric", month: "long"})},
          ${date.toLocaleTimeString()}
        `}
-      </p>   
+      </StyledDate>   
     )
 };
 
