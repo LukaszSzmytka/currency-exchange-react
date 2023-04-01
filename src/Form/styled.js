@@ -1,36 +1,37 @@
-.form__header {
+import styled from "styled-components";
+
+export const Header = styled.h1`
     text-align: center;
     margin: 5px;
-}
+`
 
-.form__label {
+export const Label = styled.label`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-}
 
-.form__labelText {
-    padding: 10px;
-}
-
-@media (max-width: 767px) {
-    .form__label {
+    @media (max-width: 767px) {
         grid-template-columns: auto;
     }
-    .form__labelText {
+`
+
+export const LabelText = styled.span`
+    padding: 10px;
+
+    @media (max-width: 767px) {
         padding: 0;
     }
-}
+`
 
-.form__field {
+export const Input = styled.input`
     border: 1px solid hsl(75, 10%, 30%);
     padding: 10px;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
-}
+`
 
-.form__button {
+export const Button = styled.button`
     width: 100%;
     border: none;
     padding: 10px;
@@ -38,17 +39,18 @@
     border: 1px solid hsl(75, 10%, 30%);
     border-radius: 5px;
     transition: 1s;
-}
 
-.form__button:hover {
-    background-color: hsl(75, 10%, 45%);
-    transform: scale(1.04);
-}
+    &:hover {
+      background-color: hsl(75, 10%, 45%);
+      transform: scale(1.04);
+    }
 
-.form__button:active {
-    background-color: hsl(75, 10%, 50%);
-}
+    &:active {
+      background-color: hsl(75, 10%, 50%);
+    }
+`
 
-.form__result {
+export const StyledResult = styled.p`
     text-align: center;
-}
+`
+

@@ -1,7 +1,7 @@
-import "./style.css";
 import { useState } from "react";
 import { currencies } from "../currencies";
-import Result from "../Result";
+import Result from "./Result";
+import { Header, Label, LabelText, Input, Button } from "./styled";
 
 const Form = () => {
 
@@ -28,28 +28,27 @@ const Form = () => {
   };
 
   return (
-    <form className="form" onSubmit={onFormSubmit}>
-      <h1 className="form__header">Kantor wymiany walut</h1>
+    <form onSubmit={onFormSubmit}>
+      <Header>Kantor wymiany walut</Header>
       <p>
-        <label className="form__label">
-          <span className="form__labelText">Podaj kwotę [PLN]* :</span>
-          <input
+        <Label>
+          <LabelText>Podaj kwotę [PLN]* :</LabelText>
+          <Input
             value={amount}
             onChange={({ target }) => setAmount(target.value)}
-            className="form__field"
             name="amount"
             type="number"
             required
             step="0.01"
             min="0.01"
           />
-        </label>
+        </Label>
       </p>
       <p>
-        <label className="form__label">
-          <span className="form__labelText">Wybierz walutę* :</span>
-          <select
-            className="form__field"
+        <Label>
+          <LabelText>Wybierz walutę* :</LabelText>
+          <Input
+            as="select"
             name="currency"
             required
             value={currency}
@@ -58,11 +57,11 @@ const Form = () => {
             {currencies.map((currency) => (
               <option key={currency.id}>{currency.name}</option>
             ))}
-          </select>
-        </label>
+          </Input>
+        </Label>
       </p>
       <p>
-        <button className="form__button">Przelicz</button>
+        <Button>Przelicz</Button>
       </p>
       <Result printResult={printResult} result={result} />
     </form>
