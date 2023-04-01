@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { currencies } from "../currencies";
+import { currencies } from "./currencies";
 import Result from "./Result";
 import { Header, Label, LabelText, Input, Button } from "./styled";
 
