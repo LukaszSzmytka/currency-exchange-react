@@ -10,14 +10,14 @@ You can see my job here:
 
 ## Technologies and features:
 - HTML
-- CSS, Normalize CSS, BEM
+- Styled-components
 - FLEX
 - GRID
 - Media queries
 - Transforms, transitions
 - Javascript (EC6+)
 - React
-- useState, useEffect
+- useState, useEffect, useRef, own hooks
 
 ## Checkout my other projects:
 - https://lukaszszmytka.github.io/homepage/
