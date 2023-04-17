@@ -1,12 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createGlobalStyle } from 'styled-components';
+import background from "./currency.png";
+
+const GlobalStyle = createGlobalStyle`
+  html {
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-image: url("${background}");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+`;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <GlobalStyle />
     <App />
   </React.StrictMode>
 );
