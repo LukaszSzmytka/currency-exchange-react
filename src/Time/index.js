@@ -3,7 +3,6 @@ import { StyledDate } from "./styled";
 import { useCurrentDate } from "./useCurrentDate";
 
 const Time = () => {
-
     const date = useCurrentDate();
 
     return (
