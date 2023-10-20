@@ -1,24 +1,27 @@
 import { useState } from "react";
-import { currencies } from "./currencies";
 import Result from "./Result";
 import { Header, Label, LabelText, Input, Button } from "./styled";
+import { useRatesData } from "./useRatesData";
 
 const Form = () => {
+  const ratesData = useRatesData();
+  const dataFromLS = localStorage.getItem("data");
+  const currenciesData = JSON.parse(dataFromLS);
+  const currencies = Object.keys(currenciesData.rates);
 
   const [amount, setAmount] = useState("");
-  const [currency, setCurrency] = useState(currencies[0].name);
+  const [currency, setCurrency] = useState(currencies[0]);
   const [result, setResult] = useState();
   const [printResult, setPrintResult] = useState();
 
-  const rate = currencies.find(({ name }) => name === currency).rate;
-  const short = currencies.find(({ name }) => name === currency).short;
+  const rate = currenciesData.rates[currency];
 
-  const calculateResult = () => {
-    setResult(amount / rate);
-  };
+  function calculateResult() {
+    setResult(amount * rate);
+  }
 
   const showResult = () => {
-    setPrintResult({ amount, short, rate });
+    setPrintResult({ amount, currency, rate });
   };
 
   const onFormSubmit = (event) => {
@@ -55,7 +58,7 @@ const Form = () => {
             onChange={({ target }) => setCurrency(target.value)}
           >
             {currencies.map((currency) => (
-              <option key={currency.id}>{currency.name}</option>
+              <option key={currency}>{currency}</option>
             ))}
           </Input>
         </Label>
