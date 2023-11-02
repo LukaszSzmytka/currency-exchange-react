@@ -49,6 +49,10 @@ export const Button = styled.button`
       background-color: hsl(75, 10%, 50%);
     }
 `
+export const Info = styled.p`
+    font-size: 0.7em;
+    text-align: center;
+`
 
 export const StyledResult = styled.p`
     text-align: center;
