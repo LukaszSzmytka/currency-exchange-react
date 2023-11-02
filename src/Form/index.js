@@ -1,31 +1,34 @@
 import { useState } from "react";
 import Result from "./Result";
-import { Header, Label, LabelText, Input, Button } from "./styled";
+import { Header, Label, LabelText, Input, Button, Info } from "./styled";
 import { useRatesData } from "./useRatesData";
 
 const Form = () => {
-  const { ratesData, currencies, currenciesData, currenciesDate } =
-    useRatesData();
+
+  const {
+    ratesData,
+    currencies,
+    currenciesData,
+    currenciesDate,
+  } = useRatesData();
 
   const [amount, setAmount] = useState("");
   const [currency, setCurrency] = useState(currencies[0]);
   const [result, setResult] = useState();
-  const [printResult, setPrintResult] = useState();
-
-  const rate = currenciesData.rates[currency];
 
   const calculateResult = () => {
-    setResult(amount * rate);
-  };
-
-  const showResult = () => {
-    setPrintResult({ amount, currency, rate });
+    const rate = currenciesData.rates[currency];
+    setResult({
+      sourceAmount: +amount,
+      targetAmount: amount * rate,
+      currency,
+      rate,
+    });
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult();
-    showResult();
   };
 
   return (
@@ -33,14 +36,11 @@ const Form = () => {
       <Header>Kantor wymiany walut</Header>
       {ratesData.status === "loading" ? (
         <p>
-          Sekundka...<br></br>Pobieram aktualne kursy walut z Europejskiego
-          Banku Centralnego...
+          Sekundka...<br/>Pobieram aktualne kursy walut z Europejskiego Banku Centralnego...
         </p>
       ) : ratesData.status === "error" ? (
         <p>
-          Hmm... Coś poszło nie tak. Sprawdź czy masz połączenie z internetem.
-          <br></br>Jeśli masz... to wygląda na to, że to nasza wina. Możesz
-          spróbować później?
+          Hmm... Coś poszło nie tak. Sprawdź czy masz połączenie z internetem.<br/>Jeśli masz... to wygląda na to, że to nasza wina. Możesz spróbować później?
         </p>
       ) : (
         <>
@@ -77,11 +77,12 @@ const Form = () => {
           <p>
             <Button>Przelicz</Button>
           </p>
+          <Info>
+            Kursy walut pobierane z Europejskiego Banku Centralnego.
+          </Info>
           <Result
-            printResult={printResult}
-            result={result}
-            currenciesDate={currenciesDate}
-          />
+          result={result}
+          currenciesDate={currenciesDate}/>
         </>
       )}
     </form>

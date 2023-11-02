@@ -1,11 +1,12 @@
 import { StyledResult } from "../styled";
 
-const Result = ({ result, printResult }) => {
-  if (printResult) {
+const Result = ({ result, currenciesDate }) => {
+
+  if (result) {
     return (
       <>
-         <StyledResult>Kurs z dnia 2023-01-09: <strong>{printResult.rate}</strong> [PLN]</StyledResult>
-         <StyledResult>Wynik: <strong>{printResult.amount}</strong> [PLN] = <strong>{result.toFixed(2)}</strong> [{printResult.currency}]</StyledResult>
+          <StyledResult>Aktualna stawka na dzień {currenciesDate}: <strong>{result.rate.toFixed(3)}</strong>&nbsp;PLN</StyledResult>
+          <StyledResult>Wynik: <strong>{result.sourceAmount}</strong> PLN = <strong>{result.targetAmount.toFixed(2)}</strong> {result.currency}</StyledResult>
       </>
     );
   }
