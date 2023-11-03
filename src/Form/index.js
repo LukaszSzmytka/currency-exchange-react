@@ -4,14 +4,16 @@ import { Header, Label, LabelText, Input, Button, Info } from "./styled";
 import { useRatesData } from "./useRatesData";
 
 const Form = () => {
-  const { ratesData, currencies, currenciesData, currenciesDate } = useRatesData();
+  const { ratesData } = useRatesData();
 
   const [amount, setAmount] = useState("");
-  const [currency, setCurrency] = useState(currencies[0]);
+  const [currency, setCurrency] = useState("EUR");
   const [result, setResult] = useState();
 
+  const currenciesDate = new Date(ratesData.apiDate);
+
   const calculateResult = () => {
-    const rate = currenciesData.conversion_rates[currency];
+    const rate = ratesData.currencies[currency];
     setResult({
       sourceAmount: +amount,
       targetAmount: amount * rate,
@@ -67,7 +69,7 @@ const Form = () => {
                 value={currency}
                 onChange={({ target }) => setCurrency(target.value)}
               >
-                {currencies.map((currency) => (
+                {Object.keys(ratesData.currencies).map((currency) => (
                   <option key={currency}>{currency}</option>
                 ))}
               </Input>
