@@ -32,6 +32,7 @@ export const Input = styled.input`
 `
 
 export const Button = styled.button`
+    color: whitesmoke;
     width: 100%;
     border: none;
     padding: 10px;
