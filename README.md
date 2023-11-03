@@ -6,7 +6,7 @@ You can see my job here:
 - https://lukaszszmytka.github.io/currency-exchange-react/
 
 ---
-[![calc3.gif](https://i.postimg.cc/kMT2gch4/calc3.gif)](https://postimg.cc/9zqmxG25)
+[![calc4.gif](https://i.postimg.cc/tTDczFJ0/calc4.gif)](https://postimg.cc/7GGXHGSX)
 
 ## Technologies and features:
 - HTML
@@ -17,7 +17,11 @@ You can see my job here:
 - Transforms, transitions
 - Javascript (EC6+)
 - React
-- useState, useEffect, useRef, own hooks
+- useState, useEffect, useRef, customHooks
+- Error handling (try, catch)
+- Axios
+- Promise, Async/Await
+- API
 
 ## Checkout my other projects:
 - https://lukaszszmytka.github.io/homepage/
